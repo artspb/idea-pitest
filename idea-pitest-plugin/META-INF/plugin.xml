@@ -1,0 +1,42 @@
+<idea-plugin version="2">
+
+    <id>me.artspb.idea.pitest.plugin</id>
+    <name>Pitest</name>
+    <version>1.1.3.0</version>
+    <idea-version since-build="139"/>
+    <vendor email="contact@artspb.me" url="http://artspb.me/pitest">Artem Khvastunov</vendor>
+    <description><![CDATA[
+    IntelliJ IDEA plugin which allows user to run Pitest and see results directly in the IDE.<br/>
+    Pitest (aka PIT) is a state of the art mutation testing system for Java and the JVM. Read all about it at http://pitest.org.
+    ]]></description>
+    <change-notes>
+        <![CDATA[
+        version 1.1.3.0
+        <br/>
+        <ul>
+            <li>first release</li>
+        </ul>
+        ]]>
+    </change-notes>
+
+    <depends>com.intellij.modules.java</depends>
+    <depends>JUnit</depends>
+    <depends>Coverage</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <runConfigurationExtension implementation="me.artspb.idea.pitest.plugin.execution.PitestRunConfigurationExtension"/>
+        <programRunner implementation="me.artspb.idea.pitest.plugin.runner.PitestProgramRunner"/>
+        <executor implementation="me.artspb.idea.pitest.plugin.execution.PitestExecutor"/>
+        <coverageRunner implementation="me.artspb.idea.pitest.plugin.coverage.PitestCoverageRunner"/>
+    </extensions>
+
+    <application-components>
+    </application-components>
+
+    <project-components>
+    </project-components>
+
+    <actions>
+    </actions>
+
+</idea-plugin>
