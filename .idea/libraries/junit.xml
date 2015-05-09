@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="junit">
+    <CLASSES>
+      <root url="file:///Applications/IntelliJ IDEA 14 CE.app/Contents/plugins/junit/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file:///Applications/IntelliJ IDEA 14 CE.app/Contents/plugins/junit/lib" recursive="false" />
+  </library>
+</component>

@@ -1,6 +1,7 @@
 # IntelliJ IDEA
-.idea/
-*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+idea-pitest-example/.idea
 
 # Mac OS X
 .DS_Store

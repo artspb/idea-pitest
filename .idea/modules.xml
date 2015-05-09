@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/idea-pitest.iml" filepath="$PROJECT_DIR$/idea-pitest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/idea-pitest-example/idea-pitest-example.iml" filepath="$PROJECT_DIR$/idea-pitest-example/idea-pitest-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/idea-pitest-plugin/idea-pitest-plugin.iml" filepath="$PROJECT_DIR$/idea-pitest-plugin/idea-pitest-plugin.iml" />
+    </modules>
+  </component>
+</project>
