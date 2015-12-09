@@ -9,9 +9,9 @@ The original Pitest logo was created by Ling Yeung. It is licensed under a [Crea
 
 ## Introduction
 
-The idea of it is to make mutation testing as much easy as possible. The plugin allows you to run Pitest against existed unit test in one click. You don't need to manually setup options, they will be derived from JUnit configuration. Report will be shown using default IDEA Coverage functionality.
+The idea of the plugin is to make mutation testing as much easy as possible. The plugin allows you to run Pitest against existed unit tests in one click. You don't need to manually setup options, they will be derived from JUnit configuration. Report will be shown using default IDEA Coverage functionality.
 
-[Screenshot](https://www.dropbox.com/s/kptkw46suw1ijot/screenshot.png?dl=0), [binary](https://www.dropbox.com/s/34py3gvoh7aq74r/idea-pitest-plugin_1.1.3.0.zip?dl=0).
+Visit [Releases](https://github.com/artspb/idea-pitest/releases/) section to download latest build.
 
 ## Limitations of the current version
 
