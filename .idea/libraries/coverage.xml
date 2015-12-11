@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="coverage">
     <CLASSES>
-      <root url="file:///Applications/IntelliJ IDEA 14 CE.app/Contents/plugins/coverage/lib" />
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/coverage/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file:///Applications/IntelliJ IDEA 14 CE.app/Contents/plugins/coverage/lib" recursive="false" />
+    <jarDirectory url="file://$APPLICATION_HOME_DIR$/plugins/coverage/lib" recursive="false" />
   </library>
 </component>
