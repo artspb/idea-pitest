@@ -16,6 +16,7 @@ public class PitestConfiguration implements JDOMExternalizable {
 
     public static final Key<PitestConfiguration> PITEST_KEY = Key.create("me.artspb.idea.pitest.plugin");
 
+    private static final String VERBOSE_LOGGING = "verboseLogging";
     private static final String EDIT_MANUALLY = "editManually";
     private static final String TARGET_TESTS = "targetTests";
     private static final String TARGET_CLASSES = "targetClasses";
@@ -24,6 +25,7 @@ public class PitestConfiguration implements JDOMExternalizable {
     private static final String SOURCE_DIRS = "sourceDirs";
     private static final String MANUAL_PARAMETERS = "manualParameters";
 
+    private boolean verboseLogging;
     private boolean editManually;
     private String targetTests;
     private String targetClasses;
@@ -45,6 +47,7 @@ public class PitestConfiguration implements JDOMExternalizable {
 
     @Override
     public void readExternal(Element element) throws InvalidDataException {
+        setVerboseLogging(Boolean.valueOf(element.getAttributeValue(VERBOSE_LOGGING)));
         setEditManually(Boolean.valueOf(element.getAttributeValue(EDIT_MANUALLY)));
         setTargetTests(element.getAttributeValue(TARGET_TESTS));
         setTargetClasses(element.getAttributeValue(TARGET_CLASSES));
@@ -57,6 +60,7 @@ public class PitestConfiguration implements JDOMExternalizable {
     @Override
     public void writeExternal(Element element) throws WriteExternalException {
         if (isEditManually()) {
+            element.setAttribute(VERBOSE_LOGGING, String.valueOf(isVerboseLogging()));
             element.setAttribute(EDIT_MANUALLY, String.valueOf(true));
             element.setAttribute(TARGET_TESTS, getTargetTests());
             element.setAttribute(TARGET_CLASSES, getTargetClasses());
@@ -65,6 +69,14 @@ public class PitestConfiguration implements JDOMExternalizable {
             element.setAttribute(SOURCE_DIRS, getSourceDirs());
             element.setAttribute(MANUAL_PARAMETERS, getManualParameters());
         }
+    }
+
+    public boolean isVerboseLogging() {
+        return verboseLogging;
+    }
+
+    public void setVerboseLogging(boolean verboseLogging) {
+        this.verboseLogging = verboseLogging;
     }
 
     public boolean isEditManually() {

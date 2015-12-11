@@ -27,6 +27,7 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
     private JPanel editor;
     private JComponent anchor;
 
+    private JCheckBox verboseLoggingField;
     private JCheckBox editManuallyField;
     private LabeledComponent<TextFieldWithBrowseButton> targetTestsField;
     private LabeledComponent<TextFieldWithBrowseButton> targetClassesField;
@@ -71,6 +72,7 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
     @Override
     protected void applyEditorTo(RunConfigurationBase runConfiguration) throws ConfigurationException {
         PitestConfiguration configuration = PitestConfiguration.getOrCreate(runConfiguration);
+        configuration.setVerboseLogging(verboseLoggingField.isSelected());
         configuration.setEditManually(editManuallyField.isSelected());
         configuration.setTargetTests(targetTestsField.getComponent().getText());
         configuration.setTargetClasses(targetClassesField.getComponent().getText());
@@ -89,6 +91,7 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
 
     private void resetEditor(RunConfigurationBase runConfiguration) {
         PitestConfiguration configuration = PitestConfiguration.getOrCreate(runConfiguration);
+        verboseLoggingField.setSelected(configuration.isVerboseLogging());
         boolean editManually = configuration.isEditManually();
         editManuallyField.setSelected(editManually);
         targetTestsField.getComponent().setText(configuration.getTargetTests());

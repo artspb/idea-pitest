@@ -29,6 +29,9 @@ public class JavaParametersConfigurator {
     }
 
     private static void configureProgramParameters(ParametersList parameters, PitestConfiguration configuration) {
+        if (configuration.isVerboseLogging()) {
+            parameters.add("--verbose");
+        }
         String targetClasses = configuration.getTargetClasses();
         checkTargetClasses(targetClasses);
         parameters.add("--targetClasses", targetClasses);
