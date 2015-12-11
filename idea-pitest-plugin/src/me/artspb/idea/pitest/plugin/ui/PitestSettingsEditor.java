@@ -33,13 +33,14 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
     private LabeledComponent<TextFieldWithBrowseButton> excludedClassesField;
     private LabeledComponent<TextFieldWithBrowseButton> reportDirField;
     private LabeledComponent<TextFieldWithBrowseButton> sourceDirsField;
+    private LabeledComponent<TextFieldWithBrowseButton> manualParametersField;
 
     private final RunConfigurationBase runConfiguration;
 
     public PitestSettingsEditor(@NotNull RunConfigurationBase runConfiguration) {
         this.runConfiguration = runConfiguration;
         anchor = UIUtil.mergeComponentsWithAnchor(targetTestsField, targetClassesField, excludedClassesField,
-                reportDirField, sourceDirsField);
+                reportDirField, sourceDirsField, manualParametersField);
         init();
     }
 
@@ -47,7 +48,7 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
         editManuallyField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(@NotNull ActionEvent e) {
-                changePanels(editManuallyField.isSelected());
+                switchPanels(editManuallyField.isSelected());
             }
         });
         // TODO configureClassChooser
@@ -76,6 +77,7 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
         configuration.setExcludedClasses(excludedClassesField.getComponent().getText());
         configuration.setReportDir(reportDirField.getComponent().getText());
         configuration.setSourceDirs(sourceDirsField.getComponent().getText());
+        configuration.setManualParameters(manualParametersField.getComponent().getText());
     }
 
     @NotNull
@@ -94,15 +96,17 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
         excludedClassesField.getComponent().setText(configuration.getExcludedClasses());
         reportDirField.getComponent().setText(configuration.getReportDir());
         sourceDirsField.getComponent().setText(configuration.getSourceDirs());
-        changePanels(editManually);
+        manualParametersField.getComponent().setText(configuration.getManualParameters());
+        switchPanels(editManually);
     }
 
-    private void changePanels(boolean enabled) {
+    private void switchPanels(boolean enabled) {
         targetTestsField.setEnabled(enabled);
         targetClassesField.setEnabled(enabled);
         excludedClassesField.setEnabled(enabled);
         reportDirField.setEnabled(enabled);
         sourceDirsField.setEnabled(enabled);
+        manualParametersField.setEnabled(enabled);
     }
 
     @Override
@@ -118,5 +122,6 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
         excludedClassesField.setAnchor(anchor);
         reportDirField.setAnchor(anchor);
         sourceDirsField.setAnchor(anchor);
+        manualParametersField.setAnchor(anchor);
     }
 }

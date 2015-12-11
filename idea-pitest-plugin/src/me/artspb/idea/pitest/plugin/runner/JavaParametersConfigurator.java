@@ -45,6 +45,7 @@ public class JavaParametersConfigurator {
         parameters.add("--historyInputLocation", history);
         parameters.add("--historyOutputLocation", history);
         parameters.add("--timestampedReports=false");
+        parameters.addParametersString(configuration.getManualParameters());
     }
 
     private static void configureClassPath(PathsList cp) {

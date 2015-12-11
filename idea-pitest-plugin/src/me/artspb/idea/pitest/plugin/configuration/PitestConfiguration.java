@@ -22,6 +22,7 @@ public class PitestConfiguration implements JDOMExternalizable {
     private static final String EXCLUDED_CLASSES = "excludedClasses";
     private static final String REPORT_DIR = "reportDir";
     private static final String SOURCE_DIRS = "sourceDirs";
+    private static final String MANUAL_PARAMETERS = "manualParameters";
 
     private boolean editManually;
     private String targetTests;
@@ -29,6 +30,7 @@ public class PitestConfiguration implements JDOMExternalizable {
     private String excludedClasses;
     private String reportDir;
     private String sourceDirs;
+    private String manualParameters;
 
     public static PitestConfiguration getOrCreate(@NotNull RunConfigurationBase runConfiguration) {
         PitestConfiguration configuration = runConfiguration.getCopyableUserData(PITEST_KEY);
@@ -49,6 +51,7 @@ public class PitestConfiguration implements JDOMExternalizable {
         setExcludedClasses(element.getAttributeValue(EXCLUDED_CLASSES));
         setReportDir(element.getAttributeValue(REPORT_DIR));
         setSourceDirs(element.getAttributeValue(SOURCE_DIRS));
+        setManualParameters(element.getAttributeValue(MANUAL_PARAMETERS));
     }
 
     @Override
@@ -60,6 +63,7 @@ public class PitestConfiguration implements JDOMExternalizable {
             element.setAttribute(EXCLUDED_CLASSES, getExcludedClasses());
             element.setAttribute(REPORT_DIR, getReportDir());
             element.setAttribute(SOURCE_DIRS, getSourceDirs());
+            element.setAttribute(MANUAL_PARAMETERS, getManualParameters());
         }
     }
 
@@ -109,5 +113,13 @@ public class PitestConfiguration implements JDOMExternalizable {
 
     public void setSourceDirs(String sourceDirs) {
         this.sourceDirs = sourceDirs;
+    }
+
+    public String getManualParameters() {
+        return manualParameters;
+    }
+
+    public void setManualParameters(String manualParameters) {
+        this.manualParameters = manualParameters;
     }
 }

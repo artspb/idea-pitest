@@ -43,6 +43,7 @@ public class JUnitConfigurationUtils {
         configureTargetTestAndClasses(pitestConfiguration, jUnitConfiguration);
         configureReportAndSourcesDirs(pitestConfiguration, jUnitConfiguration);
         pitestConfiguration.setExcludedClasses("");
+        pitestConfiguration.setManualParameters("");
         return pitestConfiguration;
     }
 
