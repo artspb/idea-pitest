@@ -8,14 +8,17 @@ import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.util.PathUtil;
 import com.intellij.util.PathsList;
-import me.artspb.idea.pitest.plugin.Constants;
-import me.artspb.idea.pitest.plugin.Utils;
-import me.artspb.idea.pitest.plugin.configuration.PitestConfiguration;
+
 import org.apache.commons.lang.StringUtils;
 import org.pitest.boot.HotSwapAgent;
 import org.pitest.mutationtest.commandline.MutationCoverageReport;
+import org.pitest.mutationtest.config.PluginServices;
 
 import java.util.List;
+
+import me.artspb.idea.pitest.plugin.Constants;
+import me.artspb.idea.pitest.plugin.Utils;
+import me.artspb.idea.pitest.plugin.configuration.PitestConfiguration;
 
 /**
  * @author Artem Khvastunov &lt;contact@artspb.me&gt;
@@ -52,8 +55,9 @@ public class JavaParametersConfigurator {
     }
 
     private static void configureClassPath(PathsList cp) {
-        cp.add(PathUtil.getJarPathForClass(HotSwapAgent.class)); // TODO take it from module cp
-        cp.add(PathUtil.getJarPathForClass(MutationCoverageReport.class));
+        cp.addFirst(PathUtil.getJarPathForClass(HotSwapAgent.class)); // TODO take it from module cp
+        cp.addFirst(PathUtil.getJarPathForClass(MutationCoverageReport.class));
+        cp.addFirst(PathUtil.getJarPathForClass(PluginServices.class));
     }
 
     private static void checkTargetClasses(String targetClasses) {
