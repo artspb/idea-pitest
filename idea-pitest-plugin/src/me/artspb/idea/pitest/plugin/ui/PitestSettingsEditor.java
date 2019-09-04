@@ -27,8 +27,8 @@ public class PitestSettingsEditor extends SettingsEditor<RunConfigurationBase> i
     private JPanel editor;
     private JComponent anchor;
 
-    private JCheckBox verboseLoggingField;
-    private JCheckBox editManuallyField;
+    private JCheckBox verboseLoggingField = new JCheckBox();
+    private JCheckBox editManuallyField = new JCheckBox();
     private LabeledComponent<TextFieldWithBrowseButton> targetTestsField;
     private LabeledComponent<TextFieldWithBrowseButton> targetClassesField;
     private LabeledComponent<TextFieldWithBrowseButton> excludedClassesField;

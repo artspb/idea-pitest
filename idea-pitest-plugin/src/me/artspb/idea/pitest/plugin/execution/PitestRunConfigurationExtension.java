@@ -45,7 +45,7 @@ public class PitestRunConfigurationExtension extends RunConfigurationExtension {
     }
 
     @Override
-    protected boolean isApplicableFor(@NotNull RunConfigurationBase runConfiguration) {
+    public boolean isApplicableFor(@NotNull RunConfigurationBase runConfiguration) {
         return JUnitConfigurationUtils.supports(runConfiguration);
     }
 
