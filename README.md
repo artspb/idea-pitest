@@ -1,3 +1,7 @@
+# Deprecation notice
+
+The plugin isn't update for a long time and not supported.
+
 # idea-pitest
 IDEA Pitest plugin
 
